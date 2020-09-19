@@ -1,2 +1,2 @@
-# HotelElectronicEquipmentManagementSystem
-Hotel Electronic Equipment Management System TDD
+# Hotel Electronics Equipments Management System
+Hotel Electronics Equipments Management System TDD
