@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.equipments.Equipment;
 import com.company.floors.Corridor;
+import com.company.floors.Floor;
 import com.company.floors.Floors;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class ElectronicEquipmentManagementSystem {
     public String controllerOutput() {
         String out = "";
         for (int floorIndex = 0; floorIndex < this.floors.size(); floorIndex++) {
-            out += floorOutput(floorIndex) + corridorOutput(this.floors.get(floorIndex).getCorridors());
+            out += floorOutput(floorIndex) + corridorOutput(this.floors.get(floorIndex));
         }
         return out;
     }
@@ -26,9 +27,9 @@ public class ElectronicEquipmentManagementSystem {
         return String.format("Floor %d\n", (floorIndex + 1));
     }
 
-    private String corridorOutput(ArrayList<Corridor> corridors) {
-        return eachCorridorOutput(filterCorridors(corridors, Constants.MAIN_CORRIDOR))
-                + eachCorridorOutput(filterCorridors(corridors, Constants.SUB_CORRIDOR));
+    private String corridorOutput(Floor floor) {
+        return eachCorridorOutput(floor.getCorridors(Constants.MAIN_CORRIDOR))
+                + eachCorridorOutput(floor.getCorridors(Constants.SUB_CORRIDOR));
     }
 
     private String eachCorridorOutput(ArrayList<Corridor> corridors) {
@@ -59,8 +60,4 @@ public class ElectronicEquipmentManagementSystem {
 
     }
 
-    private ArrayList<Corridor> filterCorridors(ArrayList<Corridor> corridors, String corridorType) {
-        return new ArrayList<Corridor>(corridors.stream().filter(q -> q.getType() == corridorType)
-                .collect(Collectors.toList()));
-    }
 }
