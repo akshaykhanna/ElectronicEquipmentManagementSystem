@@ -3,8 +3,8 @@ package com.company.equipments;
 import static com.company.Constants.LIGHT;
 
 public class Light extends Equipment {
-    public Light(){
-
+    public Light() {
+        this.status = EquipmentStatus.ON;
     }
 
     public Light(EquipmentStatus status) {

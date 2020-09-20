@@ -1,19 +1,24 @@
 package com.company.floors;
 
+import com.company.Constants;
+
+import java.util.ArrayList;
+
 public class Floor {
 
-    private final FloorUnit[] mainCorridors;
-    private final FloorUnit[] subCorridors;
+    private final ArrayList corridors;
 
-    public Floor(int noOfCorridor, int noOfSubCorridor) {
-        this.mainCorridors = new MainCorridor[noOfCorridor];
-        createMainCorridors(noOfCorridor);
-        this.subCorridors = new SubCorridor[noOfSubCorridor];
+    public Floor(int noOfMainCorridor, int noOfSubCorridor) {
+        this.corridors = new ArrayList<Corridor>();
+        for (int i = 0; i < noOfMainCorridor; i++) {
+            this.corridors.add(new MainCorridor());
+        }
+        for (int i = 0; i < noOfSubCorridor; i++) {
+            this.corridors.add(new SubCorridor());
+        }
     }
 
-    private void createMainCorridors(int noOfCorridor) {
-        for (FloorUnit mainCorridor : this.mainCorridors) {
-            mainCorridor = new MainCorridor();
-        }
+    public ArrayList<Corridor> getCorridors() {
+        return corridors;
     }
 }
