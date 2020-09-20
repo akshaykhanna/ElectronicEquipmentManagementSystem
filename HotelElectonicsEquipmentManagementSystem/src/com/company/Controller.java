@@ -6,16 +6,15 @@ import com.company.floors.Floor;
 import com.company.floors.Floors;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
-public class ElectronicEquipmentManagementSystem {
+public class Controller {
     Floors floors;
 
-    public ElectronicEquipmentManagementSystem(int noOfFloors, int noOfCorridorPerFloor, int noOfSubCorridorPerFloor) {
+    public Controller(int noOfFloors, int noOfCorridorPerFloor, int noOfSubCorridorPerFloor) {
         this.floors = new Floors(noOfFloors, noOfCorridorPerFloor, noOfSubCorridorPerFloor);
     }
 
-    public String controllerOutput() {
+    public String output() {
         String out = "";
         for (int floorIndex = 0; floorIndex < this.floors.size(); floorIndex++) {
             out += floorOutput(floorIndex) + corridorOutput(this.floors.get(floorIndex));
@@ -60,4 +59,7 @@ public class ElectronicEquipmentManagementSystem {
 
     }
 
+    public void onMovementInFloorCorridor(int floorNo, String corridorType, int corridorNo) {
+
+    }
 }
