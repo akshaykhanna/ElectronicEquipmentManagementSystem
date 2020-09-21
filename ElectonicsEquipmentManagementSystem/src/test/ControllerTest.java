@@ -17,8 +17,6 @@ class ControllerTest {
 
     @Test
     void controllerOutput_GetDefaultState() {
-//        electronicEquipmentManagementSystem = new ElectronicEquipmentManagementSystem
-//                (2, 1, 2);
         String expectedOutput =
                 "Floor 1\n" +
                         "Main Corridor 1 Light 1 : ON AC : ON\n" +
