@@ -37,8 +37,8 @@ class ControllerTest {
         String expectedOutput =
                 "Floor 1\n" +
                         "Main Corridor 1 Light 1 : ON AC : ON\n" +
-                        "Sub Corridor 1 Light 1 : OFF AC : ON\n" +
-                        "Sub Corridor 2 Light 2 : OFF AC : ON\n" +
+                        "Sub Corridor 1 Light 1 : OFF AC : OFF\n" +
+                        "Sub Corridor 2 Light 2 : ON AC : ON\n" +
                         "Floor 2\n" +
                         "Main Corridor 1 Light 1 : ON AC : ON\n" +
                         "Sub Corridor 1 Light 1 : OFF AC : ON\n" +

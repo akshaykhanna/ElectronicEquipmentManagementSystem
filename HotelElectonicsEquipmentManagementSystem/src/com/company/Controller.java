@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.equipments.Equipment;
+import com.company.equipments.EquipmentStatus;
 import com.company.floors.Corridor;
 import com.company.floors.Floor;
 import com.company.floors.Floors;
@@ -60,6 +61,6 @@ public class Controller {
     }
 
     public void onMovementInFloorCorridor(int floorNo, String corridorType, int corridorNo) {
-
+        this.floors.get(floorNo - 1).handleMovement(corridorType, corridorNo);
     }
 }
