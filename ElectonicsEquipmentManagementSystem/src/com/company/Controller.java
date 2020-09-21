@@ -1,12 +1,6 @@
 package com.company;
 
-import com.company.equipments.Equipment;
-import com.company.equipments.EquipmentStatus;
-import com.company.floors.Corridor;
-import com.company.floors.Floor;
 import com.company.floors.Floors;
-
-import java.util.ArrayList;
 
 public class Controller {
     Floors floors;
@@ -16,7 +10,10 @@ public class Controller {
     }
 
     public void onMovementInFloorCorridor(int floorNo, String corridorType, int corridorNo) {
-        this.floors.handleMovement(floorNo, corridorType, corridorNo);
+        if (corridorType == Constants.SUB_CORRIDOR) {
+            this.floors.getFloor(floorNo).turnOnLight(corridorType, corridorNo);
+            this.floors.getFloor(floorNo).balanceLoad();
+        }
     }
 
     public String output() {

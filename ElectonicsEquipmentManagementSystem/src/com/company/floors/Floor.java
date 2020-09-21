@@ -48,15 +48,11 @@ public class Floor {
         return (this.noOfMainCorridor * 15) + (this.noOfSubCorridor * 10);
     }
 
-    public void handleMovement(String corridorType, int corridorNo) {
-        if (corridorType == Constants.SUB_CORRIDOR) {
-            this.getCorridors(Constants.SUB_CORRIDOR).get(corridorNo - 1).turnOnLight();
-            this.balanceLoad();
-
-        }
+    public void turnOnLight(String corridorType, int corridorNo) {
+        this.getCorridors(Constants.SUB_CORRIDOR).get(corridorNo - 1).turnOnLight();
     }
 
-    private void balanceLoad() {
+    public void balanceLoad() {
         if (this.isExceedingMaxPower()) {
             this.turnOffEquipmentToReducePower();
         }

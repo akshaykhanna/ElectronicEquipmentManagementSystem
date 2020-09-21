@@ -9,7 +9,7 @@ public class Floors extends ArrayList<Floor> {
         }
     }
 
-    public void handleMovement(int floorNo, String corridorType, int corridorNo) {
-        this.get(floorNo - 1).handleMovement(corridorType, corridorNo);
+    public Floor getFloor(int floorNo) {
+        return this.get(floorNo - 1);
     }
 }
