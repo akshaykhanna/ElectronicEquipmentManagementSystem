@@ -26,7 +26,7 @@ class ControllerTest {
                         "Main Corridor 1 Light 1 : ON AC : ON\n" +
                         "Sub Corridor 1 Light 1 : OFF AC : ON\n" +
                         "Sub Corridor 2 Light 2 : OFF AC : ON\n";
-        assertEquals(controller.output(), expectedOutput);
+        assertEquals(expectedOutput, controller.output());
     }
 
     @Test
@@ -41,6 +41,6 @@ class ControllerTest {
                         "Main Corridor 1 Light 1 : ON AC : ON\n" +
                         "Sub Corridor 1 Light 1 : OFF AC : ON\n" +
                         "Sub Corridor 2 Light 2 : OFF AC : ON\n";
-        assertEquals(controller.output(), expectedOutput);
+        assertEquals(expectedOutput, controller.output());
     }
 }
