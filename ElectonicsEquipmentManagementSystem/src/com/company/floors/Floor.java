@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class Floor {
-
     private final ArrayList<Corridor> corridors;
     private final int noOfMainCorridor;
     private final int noOfSubCorridor;
@@ -32,7 +31,17 @@ public class Floor {
                 .collect(Collectors.toList()));
     }
 
-    public boolean isExceedingMaxPower() {
+    public void turnOnLight(String corridorType, int corridorNo) {
+        this.getCorridors(Constants.SUB_CORRIDOR).get(corridorNo - 1).turnOnLight();
+    }
+
+    public void balanceLoad() {
+        if (this.isExceedingMaxPower()) {
+            this.turnOffEquipmentToReducePower();
+        }
+    }
+
+    private boolean isExceedingMaxPower() {
         return totalPower() > maxFloorPower();
     }
 
@@ -46,16 +55,6 @@ public class Floor {
 
     private double maxFloorPower() {
         return (this.noOfMainCorridor * 15) + (this.noOfSubCorridor * 10);
-    }
-
-    public void turnOnLight(String corridorType, int corridorNo) {
-        this.getCorridors(Constants.SUB_CORRIDOR).get(corridorNo - 1).turnOnLight();
-    }
-
-    public void balanceLoad() {
-        if (this.isExceedingMaxPower()) {
-            this.turnOffEquipmentToReducePower();
-        }
     }
 
     private void turnOffEquipmentToReducePower() {

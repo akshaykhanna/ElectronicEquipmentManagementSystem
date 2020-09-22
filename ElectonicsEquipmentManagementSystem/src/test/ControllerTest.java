@@ -30,7 +30,7 @@ class ControllerTest {
     }
 
     @Test
-    void controllerOutput_WhenThereIs() {
+    void controllerOutput_WhenThereIsMotionFloor() {
         controller.onMovementInFloorCorridor(1, Constants.SUB_CORRIDOR, 2);
         String expectedOutput =
                 "Floor 1\n" +
