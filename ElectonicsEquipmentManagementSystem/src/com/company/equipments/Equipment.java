@@ -2,6 +2,7 @@ package com.company.equipments;
 
 public abstract class Equipment {
     protected EquipmentStatus status;
+    protected double power;
 
     public abstract String Name();
 

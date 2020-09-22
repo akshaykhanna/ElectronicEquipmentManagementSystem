@@ -10,7 +10,7 @@ class LightTest {
 
     @Test
     void test_InitialState() {
-        Light obj = new Light(EquipmentStatus.OFF);
+        Light obj = new Light();
         assertEquals("Light", obj.Name());
         assertEquals(5, obj.Power());
         assertEquals(EquipmentStatus.OFF, obj.Status());
@@ -18,8 +18,8 @@ class LightTest {
     @Test
     void test_StatusChange() {
         Light obj = new Light();
-        assertEquals(EquipmentStatus.ON, obj.Status());
-        obj.Status(EquipmentStatus.OFF);
         assertEquals(EquipmentStatus.OFF, obj.Status());
+        obj.Status(EquipmentStatus.ON);
+        assertEquals(EquipmentStatus.ON, obj.Status());
     }
 }

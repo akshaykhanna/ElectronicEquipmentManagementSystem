@@ -11,9 +11,21 @@ public class Controller {
 
     public void onMovementInFloorCorridor(int floorNo, String corridorType, int corridorNo) {
         if (corridorType == Constants.SUB_CORRIDOR) {
-            this.floors.getFloor(floorNo).turnOnLight(corridorType, corridorNo);
-            this.floors.getFloor(floorNo).balanceLoad();
+            respondToMotion(floorNo, corridorType, corridorNo);
+            Util.setTimeout(() -> {
+                this.resetBack();
+                // considering 1 min as 1 sec (1000ms) for ease of dev
+            }, 1000);
         }
+    }
+
+    private void resetBack() {
+        this.floors.reset();
+    }
+
+    private void respondToMotion(int floorNo, String corridorType, int corridorNo) {
+        this.floors.getFloor(floorNo).turnOnLight(corridorType, corridorNo);
+        this.floors.getFloor(floorNo).balanceLoad();
     }
 
     public String output() {

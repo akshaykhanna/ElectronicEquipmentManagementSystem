@@ -13,13 +13,13 @@ class ACTest {
         Equipment obj = new AC();
         assertEquals("AC", obj.Name());
         assertEquals(10, obj.Power());
-        assertEquals(EquipmentStatus.ON, obj.Status());
+        assertEquals(EquipmentStatus.OFF, obj.Status());
     }
     @Test
     void test_StatusChange() {
         Equipment obj = new AC();
-        assertEquals(EquipmentStatus.ON, obj.Status());
-        obj.Status(EquipmentStatus.OFF);
         assertEquals(EquipmentStatus.OFF, obj.Status());
+        obj.Status(EquipmentStatus.ON);
+        assertEquals(EquipmentStatus.ON, obj.Status());
     }
 }

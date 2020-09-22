@@ -12,4 +12,8 @@ public class Floors extends ArrayList<Floor> {
     public Floor getFloor(int floorNo) {
         return this.get(floorNo - 1);
     }
+
+    public void reset() {
+        this.forEach(floor -> floor.reset());
+    }
 }

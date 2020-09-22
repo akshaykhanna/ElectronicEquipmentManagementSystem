@@ -7,7 +7,24 @@ import com.company.equipments.Light;
 public class SubCorridor extends Corridor {
     public SubCorridor() {
         super(Constants.SUB_CORRIDOR);
-        this.equipments.add(new Light(EquipmentStatus.OFF));
-        this.addGenericEquipments();
+        this.addEquipments();
+        this.setIntialState();
+    }
+
+    @Override
+    public void reset() {
+        this.setIntialState();
+    }
+
+    @Override
+    protected void setIntialState() {
+        this.equipments.forEach(equipment -> {
+            if (equipment.Name() != Constants.LIGHT) {
+                equipment.Status(EquipmentStatus.ON);
+            } else {
+                equipment.Status(EquipmentStatus.OFF);
+
+            }
+        });
     }
 }

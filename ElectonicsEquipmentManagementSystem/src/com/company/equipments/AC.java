@@ -4,7 +4,8 @@ import com.company.Constants;
 
 public class AC extends Equipment {
     public AC() {
-        this.status = EquipmentStatus.ON;
+        this.power = 10;
+        this.status = EquipmentStatus.OFF;
     }
 
     @Override
@@ -14,6 +15,6 @@ public class AC extends Equipment {
 
     @Override
     public double Power() {
-        return 10;
+        return this.power;
     }
 }

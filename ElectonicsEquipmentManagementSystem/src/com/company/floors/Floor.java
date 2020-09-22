@@ -64,4 +64,8 @@ public class Floor {
             }
         }
     }
+
+    public void reset() {
+        this.corridors.forEach(corridor -> corridor.reset());
+    }
 }

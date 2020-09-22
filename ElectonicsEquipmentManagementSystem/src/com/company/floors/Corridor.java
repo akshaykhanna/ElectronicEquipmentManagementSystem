@@ -4,12 +4,13 @@ import com.company.Constants;
 import com.company.equipments.AC;
 import com.company.equipments.Equipment;
 import com.company.equipments.EquipmentStatus;
+import com.company.equipments.Light;
 
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class Corridor {
+public abstract class Corridor {
     protected String type;
     protected ArrayList<Equipment> equipments;
 
@@ -31,7 +32,8 @@ public class Corridor {
                 .collect(Collectors.toList()));
     }
 
-    protected void addGenericEquipments() {
+    protected void addEquipments() {
+        this.equipments.add(new Light());
         this.equipments.add(new AC());
     }
 
@@ -52,4 +54,8 @@ public class Corridor {
         }
         return false;
     }
+
+    abstract public void reset();
+
+    protected abstract void setIntialState();
 }

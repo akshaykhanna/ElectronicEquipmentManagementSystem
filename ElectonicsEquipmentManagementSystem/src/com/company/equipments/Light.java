@@ -4,11 +4,8 @@ import static com.company.Constants.LIGHT;
 
 public class Light extends Equipment {
     public Light() {
-        this.status = EquipmentStatus.ON;
-    }
-
-    public Light(EquipmentStatus status) {
-        this.status = status;
+        this.power = 5;
+        this.status = EquipmentStatus.OFF;
     }
 
     @Override
@@ -18,6 +15,6 @@ public class Light extends Equipment {
 
     @Override
     public double Power() {
-        return 5;
+        return this.power;
     }
 }
