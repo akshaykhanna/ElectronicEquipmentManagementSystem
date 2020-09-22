@@ -15,7 +15,7 @@ public class Controller {
             Util.setTimeout(() -> {
                 this.resetBack();
                 // considering 1 min as 1 sec (1000ms) for ease of dev
-            }, 1000);
+            }, Config.RESET_TIME_INTERVAL);
         }
     }
 
