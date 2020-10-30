@@ -90,7 +90,4 @@ Sub corridor 1 Light 1 : OFF AC : ON
 Sub corridor 2 Light 2 : OFF AC : ON
 
 ## Solution
-Refer code files
-> Key features:-
-- TDD to reach solution.
-- Refractored to remove code smells
+Refer to code files & use TDD to reach solution.
