@@ -33,7 +33,7 @@ different external inputs for motion in sub corridors. For each input, the progr
 state of all the lights and ACs in the hotel. For simplicity, assume that the controller is operating
 at the Night Time.
 
-Page 2 / 3
+### Sample I/0
 
 Sample input and output below -
 - Number of floors: 2
@@ -88,3 +88,9 @@ Floor 2
 Main corridor 1 Light 1 : ON AC : ON
 Sub corridor 1 Light 1 : OFF AC : ON
 Sub corridor 2 Light 2 : OFF AC : ON
+
+## Solution
+Refer code files
+> Key features:-
+- TDD to reach solution.
+- Refractored to remove code smells
